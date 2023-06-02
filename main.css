@@ -1,0 +1,174 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+:root{
+    --background-color:  #172041;
+    --main-color: #3a7af8;
+}
+
+.main-container{
+    background-color: var(--background-color);
+    position: relative;
+    color: #fff;
+    background-image: url(./back.jpeg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+z-index: 4;
+}
+.color{
+    position: absolute;
+    left: -10%;
+    width: 60%;
+    height: 100%;
+    background-color: #172041e0;
+    transform: skew(-20deg);
+    z-index: 5;
+    box-shadow: 30px -50px 100px #080d1fc4;
+}
+.container{
+    position: relative;
+    z-index: 11;
+    width: 80%;
+    margin: auto;
+    height: 100%;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px;
+}
+ul{
+    list-style: none;
+}
+.logo{
+    padding: 10px;
+}
+nav li{
+    display: inline-block;
+    margin-left: 20px;
+    transition: .3s;
+    padding: 10px;
+    border-radius: 20px;
+}
+nav li:hover{
+cursor: pointer;
+background-color: var(--main-color);
+}
+.bars{
+    display: none;
+    padding: 10px;
+    width: 50px;
+    cursor: pointer;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    height: fit-content;
+}
+.hide-myNave{
+    position: relative;
+    display: none;
+}
+.hidden-nav li:not(:last-child){
+display: block;
+margin-bottom: 10px;
+}
+.hidden-nav li{
+    transition: .3s;
+}
+.hidden-nav li:hover{
+margin-left: 20px;
+cursor: pointer;
+color: #aaa;
+}
+.hidden-nav{
+    position: absolute;
+    background-color: var(--background-color);
+    padding: 20px;
+    width: 90%;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: .3s;
+}
+/* .none{
+    display: none;
+} */
+.show{
+    opacity: 1 !important;
+    transform: translateY(0%) !important;
+}
+.bars span{
+    display: block;
+    height: 3px;
+    background-color: #eee;
+    margin-bottom: 5px;
+    transition: .3s;
+}
+.bars span:last-child{
+    margin-bottom: 0px;
+}
+.bars .progress{
+    width: 60%;
+}
+.bars:hover .progress{
+    width: 100%;
+}
+.bars:active span{
+    background-color: #aaa;
+}
+.active{
+    background-color: var(--main-color);
+}
+
+/* //////////////////////////////// */
+section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 85.5vh;
+}
+section .left{
+    width: 50%;
+}
+
+section .left h1{
+    font-size: 47px;
+    margin-bottom: 30px;
+}
+section .left button{
+    background-color: var(--main-color);
+    border: none;
+    margin-top: 30px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: #fff;
+    font-weight:500;
+    letter-spacing: 1px;
+    font-size: 14px;
+    transition: .3s;
+}
+section .left button:hover{
+    cursor: pointer;
+    background-color: #1d65f7;
+}
+
+
+@media (max-width:900px) {
+    .bars, .hide-myNave{
+        display: block;
+    }
+    nav ul, .right{
+        display: none;
+    }
+}
+@media (max-width:650px) {
+    section .left{
+        margin-top: 50px;
+        width: 100%;
+    }
+    section{
+        display: block;
+    }
+}
